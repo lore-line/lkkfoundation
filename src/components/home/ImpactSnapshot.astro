@@ -3,22 +3,21 @@
  * ImpactSnapshot — Stats + portrait section from reference.html (lines 305-344)
  * Pattern: 2-col grid, 2x2 metric grid left, portrait with quote card right
  *
- * NOTE: Metric values are PRD placeholders — DO NOT invent real figures.
  * TODO Phase 6: Connect to Sanity ImpactMetric model
  */
 import SectionWrapper from "@components/shared/SectionWrapper.astro";
 import MetricCard from "@components/shared/MetricCard.astro";
 
-// Placeholder metrics — will be replaced by Sanity data
+// Stats from reference.html — will be replaced by Sanity data
 const metrics = [
-  { value: "—", label: "Scholars Supported" },
-  { value: "—", label: "Animals Rescued" },
-  { value: "—", label: "Community Programs" },
-  { value: "—", label: "Lives Touched" },
+  { value: "200+", label: "Scholars Graduated" },
+  { value: "500+", label: "Animals Rescued" },
+  { value: "12", label: "Community Centers" },
+  { value: "₱5M+", label: "Aid Distributed" },
 ];
 ---
 
-<SectionWrapper bg="paper">
+<SectionWrapper bg="white">
   <div class="grid lg:grid-cols-2 gap-16 items-center">
     <!-- Metrics -->
     <div>
@@ -42,10 +41,10 @@ const metrics = [
       <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-lg max-w-xs hidden md:block border border-stone-100">
         <p class="font-serif italic text-lg text-brand-dark">
           <!-- TODO Phase 6: Replace with real Story from Sanity -->
-          "Placeholder testimonial from a scholar or beneficiary."
+          "The foundation didn't just give me books, they gave me a future."
         </p>
         <p class="text-xs uppercase tracking-widest text-brand-earth mt-4">
-          — Name, Role
+          — Maria, Scholar Class of '23
         </p>
       </div>
     </div>

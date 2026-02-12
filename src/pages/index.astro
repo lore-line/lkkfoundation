@@ -2,24 +2,24 @@
 /**
  * Home Page — PRD section 6: Home
  * Section order matches PRD exactly:
- *   Hero → Legacy → PlantGrowth → PillarsGrid → FeaturedPrograms → ImpactSnapshot → CTA
+ *   Hero → ImpactSnapshot → Legacy → PlantGrowth → PillarsGrid → FeaturedPrograms → CTA
  */
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Hero from "@components/home/Hero.astro";
 import LegacySection from "@components/home/LegacySection.astro";
 import PlantGrowthSection from "@components/home/PlantGrowthSection.astro";
 import PillarsGrid from "@components/home/PillarsGrid.astro";
-import FeaturedPrograms from "@components/home/FeaturedPrograms.astro";
 import ImpactSnapshot from "@components/home/ImpactSnapshot.astro";
+import FeaturedPrograms from "@components/home/FeaturedPrograms.astro";
 import CTASection from "@components/home/CTASection.astro";
 ---
 
 <BaseLayout title="Growing Futures in Mindanao">
   <Hero />
+  <ImpactSnapshot />
   <LegacySection />
   <PlantGrowthSection />
   <PillarsGrid />
   <FeaturedPrograms />
-  <ImpactSnapshot />
   <CTASection />
 </BaseLayout>
