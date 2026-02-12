@@ -4,6 +4,7 @@
  * Pattern: logo left, menu trigger right — minimal, all breakpoints
  * Reference shows NO inline nav links; only a Menu button that opens a panel.
  */
+import { Icon } from "astro-icon/components";
 ---
 
 <nav
@@ -41,7 +42,7 @@
       <div
         class="w-12 h-12 rounded-full border border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-brand-dark transition-all duration-300"
       >
-        <iconify-icon icon="solar:hamburger-menu-linear" width="20"></iconify-icon>
+        <Icon name="solar:hamburger-menu-linear" class="w-5 h-5" />
       </div>
     </button>
   </div>

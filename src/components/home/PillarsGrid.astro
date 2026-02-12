@@ -6,6 +6,7 @@
  *
  * TODO Phase 5: Fetch pillar data from Sanity
  */
+import { Icon } from "astro-icon/components";
 
 const pillars = [
   {
@@ -50,7 +51,7 @@ const pillars = [
         />
         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-90 transition-opacity" />
         <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-          <iconify-icon icon={pillar.icon} class="text-brand-gold text-4xl mb-4 block" />
+          <Icon name={pillar.icon} class="w-10 h-10 text-brand-gold mb-4" />
           <h3 class="text-brand-paper font-serif text-3xl mb-2">
             {pillar.title}
           </h3>
@@ -65,7 +66,7 @@ const pillars = [
             href={pillar.cta.href}
             class="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest hover:text-white transition-colors"
           >
-            {pillar.cta.label} <iconify-icon icon="solar:arrow-right-linear" />
+            {pillar.cta.label} <Icon name="solar:arrow-right-linear" class="w-4 h-4" />
           </a>
         </div>
       </div>

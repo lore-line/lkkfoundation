@@ -5,6 +5,7 @@
  * story text with eyebrow label and arrow link
  */
 import SectionWrapper from "@components/shared/SectionWrapper.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <SectionWrapper bg="paper">
@@ -48,7 +49,7 @@ import SectionWrapper from "@components/shared/SectionWrapper.astro";
       </p>
       <a href="/our-story" class="link-arrow">
         Read the full story
-        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+        <Icon name="solar:arrow-right-linear" class="w-4 h-4" />
       </a>
     </div>
   </div>
