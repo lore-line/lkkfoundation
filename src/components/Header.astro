@@ -1,10 +1,23 @@
 ---
 /**
- * Header — Transparent fixed nav from reference.html (lines 86-107)
- * Pattern: logo left, menu trigger right — minimal, all breakpoints
- * Reference shows NO inline nav links; only a Menu button that opens a panel.
+ * Header — Transparent fixed nav with full-screen menu overlay
+ * Pattern: logo left, hamburger trigger right, overlay panel with nav links
  */
 import { Icon } from "astro-icon/components";
+
+const exploreLinks = [
+  { label: "Our History", href: "/our-story" },
+  { label: "Programs", href: "/programs" },
+  { label: "Impact", href: "/impact" },
+  { label: "News & Stories", href: "/news" },
+];
+
+const actionLinks = [
+  { label: "Donate", href: "/get-involved#donate" },
+  { label: "Volunteer", href: "/get-involved#volunteer" },
+  { label: "Partner with Us", href: "/get-involved#partner" },
+  { label: "Adopt a Pet", href: "/programs/animal-welfare" },
+];
 ---
 
 <nav
@@ -30,15 +43,14 @@ import { Icon } from "astro-icon/components";
       </div>
     </a>
 
-    <!-- Menu Trigger — visible on ALL breakpoints (matches reference exactly) -->
+    <!-- Menu Trigger -->
     <button
+      id="menu-open"
       class="flex items-center gap-3 text-white group"
       aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="menu-overlay"
     >
-      <span
-        class="hidden md:block text-xs font-medium tracking-widest uppercase opacity-90 group-hover:opacity-100 transition-opacity"
-        >Menu</span
-      >
       <div
         class="w-12 h-12 rounded-full border border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-brand-dark transition-all duration-300"
       >
@@ -48,4 +60,133 @@ import { Icon } from "astro-icon/components";
   </div>
 </nav>
 
-<!-- TODO Phase 3: Add full-screen menu overlay panel with nav links -->
+<!-- Full-screen Menu Overlay -->
+<div
+  id="menu-overlay"
+  class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-500"
+  aria-hidden="true"
+  role="dialog"
+  aria-label="Site navigation"
+>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-brand-dark/95 backdrop-blur-md"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 h-full flex flex-col">
+    <!-- Close button — same container + padding as nav so it overlaps the hamburger -->
+    <div class="w-full pt-6">
+      <div class="container-wide flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group text-white">
+          <div
+            class="w-10 h-10 border border-white/30 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-brand-dark transition-all duration-500"
+          >
+            <span class="font-serif italic text-lg translate-y-[1px]">L</span>
+          </div>
+          <div class="flex flex-col text-white">
+            <span class="text-sm font-medium tracking-tight uppercase leading-none"
+              >Limketkai</span
+            >
+            <span
+              class="text-[0.6rem] tracking-[0.2em] uppercase opacity-80 leading-none mt-1"
+              >Foundation</span
+            >
+          </div>
+        </a>
+
+        <button
+          id="menu-close"
+          class="flex items-center gap-3 text-white group"
+          aria-label="Close menu"
+        >
+          <div
+            class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-brand-dark transition-all duration-300"
+          >
+            <Icon name="solar:close-circle-linear" class="w-5 h-5" />
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Nav links -->
+    <div class="flex-1 flex items-center">
+      <div class="container-wide w-full">
+        <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+          <!-- Explore -->
+          <div>
+            <h4
+              class="text-xs uppercase tracking-[0.2em] text-brand-gold mb-8"
+            >
+              Explore
+            </h4>
+            <ul class="space-y-6">
+              {
+                exploreLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="font-serif text-3xl md:text-5xl text-white/80 hover:text-brand-gold transition-colors duration-300 leading-tight block"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <!-- Action -->
+          <div>
+            <h4
+              class="text-xs uppercase tracking-[0.2em] text-brand-gold mb-8"
+            >
+              Get Involved
+            </h4>
+            <ul class="space-y-6">
+              {
+                actionLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="font-serif text-3xl md:text-5xl text-white/80 hover:text-brand-gold transition-colors duration-300 leading-tight block"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const openBtn = document.getElementById("menu-open");
+  const closeBtn = document.getElementById("menu-close");
+  const overlay = document.getElementById("menu-overlay");
+
+  function openMenu() {
+    overlay?.classList.remove("opacity-0", "pointer-events-none");
+    overlay?.classList.add("opacity-100", "pointer-events-auto");
+    overlay?.setAttribute("aria-hidden", "false");
+    openBtn?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    overlay?.classList.add("opacity-0", "pointer-events-none");
+    overlay?.classList.remove("opacity-100", "pointer-events-auto");
+    overlay?.setAttribute("aria-hidden", "true");
+    openBtn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  openBtn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+</script>
