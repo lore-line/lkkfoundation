@@ -1,0 +1,448 @@
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limketkai Foundation | Growing Futures in Mindanao</title>
+    
+    <!-- Fonts: Playfair Display (Heritage/Serif) & Inter (Modern/Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            paper: '#F5F2EB',   /* Rice Paper */
+                            dark: '#162621',    /* Deep Rainforest */
+                            earth: '#5D4037',   /* Coconut/Soil */
+                            gold: '#D4AF37',    /* Muted Sunrise */
+                            clay: '#C49A6C',    /* Dry Leaf */
+                            white: '#FAFAFA'
+                        }
+                    },
+                    backgroundImage: {
+                        'grain': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Cinematic styling adjustments */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Subtle parallax feel for hero */
+        .hero-bg {
+            animation: slowZoom 20s infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5F2EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5D4037;
+            border-radius: 4px;
+        }
+
+        /* Text reveal masks */
+        .text-reveal {
+            background: linear-gradient(to right, #162621 50%, #162621 50%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-paper text-brand-dark font-sans relative">
+
+    <!-- Film Grain Overlay -->
+    <div class="fixed inset-0 pointer-events-none z-50 mix-blend-multiply opacity-40 bg-grain"></div>
+
+    <!-- Navigation (Transparent & Minimal) -->
+    <nav class="fixed w-full z-40 top-0 transition-all duration-300 bg-gradient-to-b from-black/40 to-transparent pt-6 pb-12">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-10 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group text-white">
+                <div class="w-10 h-10 border border-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-brand-dark transition-all duration-500">
+                    <span class="font-serif italic text-lg translate-y-[1px]">L</span>
+                </div>
+                <div class="flex flex-col text-white">
+                    <span class="text-sm font-medium tracking-tight uppercase leading-none">Limketkai</span>
+                    <span class="text-[0.6rem] tracking-[0.2em] uppercase opacity-80 leading-none mt-1">Foundation</span>
+                </div>
+            </a>
+
+            <!-- Menu Trigger -->
+            <button class="flex items-center gap-3 text-white group">
+                <span class="hidden md:block text-xs font-medium tracking-widest uppercase opacity-90 group-hover:opacity-100 transition-opacity">Menu</span>
+                <div class="w-12 h-12 rounded-full border border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-brand-dark transition-all duration-300">
+                    <iconify-icon icon="solar:hamburger-menu-linear" width="20"></iconify-icon>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Cinematic & Emotional -->
+    <header class="relative h-screen w-full overflow-hidden flex items-end pb-20 md:pb-32">
+        <!-- Background Image: Golden Hour / Authentic Filipino Context -->
+        <div class="absolute inset-0 z-0">
+            <!-- Used an image resembling vibrant asian community/youth in warm light -->
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&amp;w=2070&amp;auto=format&amp;fit=crop" alt="Filipino Youth in Mindanao" class="w-full h-full object-cover hero-bg brightness-[0.85]">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-[90rem] mx-auto px-6 md:px-10">
+            <div class="grid md:grid-cols-12 gap-6 items-end">
+                <div class="md:col-span-8 lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md">
+                        <iconify-icon icon="solar:map-point-linear" class="text-brand-gold"></iconify-icon>
+                        <span class="text-xs text-brand-white tracking-widest uppercase">Cagayan de Oro, Philippines</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl text-brand-paper leading-[0.9] tracking-tighter mb-8 opacity-95">
+                        Growing Futures <br> 
+                        <span class="italic text-brand-gold font-light">in Mindanao.</span>
+                    </h1>
+                    
+                    <div class="flex flex-col sm:flex-row gap-5 mt-10">
+                        <a href="#donate" class="bg-brand-gold text-brand-dark px-10 py-4 rounded-full text-sm font-medium hover:bg-white transition-colors duration-300 flex items-center justify-center gap-2 min-w-[160px]">
+                            Make a Donation
+                        </a>
+                        <a href="#join" class="border border-white/30 text-white backdrop-blur-sm px-10 py-4 rounded-full text-sm font-medium hover:bg-white/10 transition-colors duration-300 flex items-center justify-center gap-2 min-w-[160px]">
+                            Join the Community
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-4 lg:col-span-5 flex md:justify-end pb-2">
+                    <p class="text-white/80 text-sm md:text-base font-light leading-relaxed max-w-xs md:text-right">
+                        Continuing the Limketkai legacy by nourishing the land, educating the youth, and protecting the voiceless.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Legacy: Split Heritage Section -->
+    <section class="relative bg-brand-paper py-24 md:py-32 overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-10">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Visual -->
+                <div class="relative order-2 lg:order-1">
+                    <div class="aspect-[4/5] md:aspect-square relative overflow-hidden rounded-sm shadow-2xl">
+                        <!-- Heritage textural image -->
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Hands planting seeds" class="absolute inset-0 w-full h-full object-cover grayscale sepia-[30%] contrast-125">
+                        
+                        <!-- Overlay Text on Image -->
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <p class="font-serif italic text-2xl text-white/90 leading-tight">
+                                "The strength of the tree lies in the depth of its roots."
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="absolute -top-6 -left-6 w-24 h-24 border-t border-l border-brand-earth/30"></div>
+                </div>
+
+                <!-- Story -->
+                <div class="order-1 lg:order-2">
+                    <span class="text-brand-earth text-xs tracking-[0.2em] uppercase font-semibold mb-6 block">Our Origins</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-brand-dark mb-8 leading-none tracking-tight">
+                        Resilience woven into <br>
+                        <span class="italic text-brand-earth/80">our history.</span>
+                    </h2>
+                    <p class="text-brand-dark/70 text-lg font-light leading-relaxed mb-8 max-w-lg">
+                        What started as a single act of protection during wartime has grown into a lifetime of stewardship. The Limketkai family believes that true wealth is found not in what you keep, but in what you cultivate for the community.
+                    </p>
+                    <a href="#story" class="inline-flex items-center gap-2 text-brand-earth border-b border-brand-earth/30 pb-1 hover:text-brand-dark hover:border-brand-dark transition-colors uppercase tracking-widest text-xs font-medium">
+                        Read the full story
+                        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Immersive Scroll: The Growth (Visual Metaphor) -->
+    <section class="bg-brand-dark text-brand-paper py-32 px-6 relative overflow-hidden">
+        <!-- Background Texture -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#C49A6C 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">From Seed to Canopy</h2>
+                <p class="text-white/60 font-light max-w-xl mx-auto">We nurture every stage of development, ensuring our impact sustains generations.</p>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="relative">
+                <!-- Center Line -->
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/20 md:-translate-x-1/2"></div>
+
+                <!-- Stage 1: The Seed -->
+                <div class="relative grid md:grid-cols-2 gap-12 items-center mb-32">
+                    <div class="md:text-right md:pr-16 order-1">
+                        <span class="text-brand-gold font-serif italic text-2xl mb-2 block">The Seed</span>
+                        <h3 class="text-3xl font-medium mb-4">Education &amp; Values</h3>
+                        <p class="text-white/60 font-light leading-relaxed">Providing scholarships and DanceSport training to instill discipline and hope in the youth of Cagayan de Oro.</p>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)]"></div>
+                    <div class="md:pl-16 order-2">
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-brand-earth/20 relative group">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Students" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 2: The Stem -->
+                <div class="relative grid md:grid-cols-2 gap-12 items-center mb-32">
+                    <div class="md:text-right md:pr-16 order-1 md:order-2">
+                        <span class="text-brand-gold font-serif italic text-2xl mb-2 block">The Stem</span>
+                        <h3 class="text-3xl font-medium mb-4">Compassion &amp; Welfare</h3>
+                        <p class="text-white/60 font-light leading-relaxed">Our Animal Rescue center provides sanctuary, proving that a resilient community cares for all living beings.</p>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)]"></div>
+                    <div class="md:pl-16 order-2 md:order-1">
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-brand-earth/20 relative group">
+                            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Animal Rescue" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 3: The Tree -->
+                <div class="relative grid md:grid-cols-2 gap-12 items-center">
+                    <div class="md:text-right md:pr-16 order-1">
+                        <span class="text-brand-gold font-serif italic text-2xl mb-2 block">The Tree</span>
+                        <h3 class="text-3xl font-medium mb-4">Access &amp; Infrastructure</h3>
+                        <p class="text-white/60 font-light leading-relaxed">Building modern libraries and tech hubs to bridge the digital divide in Mindanao.</p>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full shadow-[0_0_20px_rgba(212,175,55,0.4)]"></div>
+                    <div class="md:pl-16 order-2">
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-brand-earth/20 relative group">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Tech Education" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edge-to-Edge Pillars (Visual Blocks) -->
+    <section class="grid md:grid-cols-3 min-h-[800px]">
+        <!-- Pillar 1: Youth -->
+        <div class="group relative h-[500px] md:h-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="DanceSport" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-12">
+                <iconify-icon icon="solar:users-group-two-rounded-linear" class="text-brand-gold text-4xl mb-4"></iconify-icon>
+                <h3 class="text-brand-paper font-serif text-3xl mb-2">Empowering Youth</h3>
+                <p class="text-white/80 font-light text-sm mb-6 max-w-xs translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    Through movement, discipline, and education, we build the leaders of tomorrow.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest hover:text-white transition-colors">
+                    Explore Program <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pillar 2: Compassion -->
+        <div class="group relative h-[500px] md:h-auto overflow-hidden">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Dog Shelter" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-12">
+                <iconify-icon icon="solar:heart-linear" class="text-brand-gold text-4xl mb-4"></iconify-icon>
+                <h3 class="text-brand-paper font-serif text-3xl mb-2">Circle of Compassion</h3>
+                <p class="text-white/80 font-light text-sm mb-6 max-w-xs translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    A safe haven for the abandoned. We advocate for a society that protects the vulnerable.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest hover:text-white transition-colors">
+                    Meet the Animals <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pillar 3: Tech -->
+        <div class="group relative h-[500px] md:h-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Students Computer" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-90 transition-opacity"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-12">
+                <iconify-icon icon="solar:laptop-3-linear" class="text-brand-gold text-4xl mb-4"></iconify-icon>
+                <h3 class="text-brand-paper font-serif text-3xl mb-2">Building Access</h3>
+                <p class="text-white/80 font-light text-sm mb-6 max-w-xs translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    Libraries and Tech Hubs that provide the tools for innovation and learning.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest hover:text-white transition-colors">
+                    See Our Plans <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact: Real Faces, Real Numbers -->
+    <section class="py-24 md:py-32 px-6 bg-brand-paper">
+        <div class="max-w-[90rem] mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Data -->
+                <div>
+                    <span class="text-brand-earth text-xs tracking-[0.2em] uppercase font-semibold mb-6 block">Our Impact</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-brand-dark mb-12 tracking-tight">Real change measured in lives, not just figures.</h2>
+                    
+                    <div class="grid grid-cols-2 gap-y-12 gap-x-8">
+                        <div>
+                            <p class="text-5xl md:text-6xl font-serif text-brand-earth mb-2">200+</p>
+                            <p class="text-sm uppercase tracking-widest text-brand-dark/60">Scholars Graduated</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl md:text-6xl font-serif text-brand-earth mb-2">500+</p>
+                            <p class="text-sm uppercase tracking-widest text-brand-dark/60">Animals Rescued</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl md:text-6xl font-serif text-brand-earth mb-2">12</p>
+                            <p class="text-sm uppercase tracking-widest text-brand-dark/60">Community Centers</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl md:text-6xl font-serif text-brand-earth mb-2">₱5M+</p>
+                            <p class="text-sm uppercase tracking-widest text-brand-dark/60">Aid Distributed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portrait -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Happy Child" class="rounded-sm shadow-xl w-full h-auto grayscale-[20%] contrast-[1.1]">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 shadow-lg max-w-xs hidden md:block border border-stone-100">
+                        <p class="font-serif italic text-lg text-brand-dark">"The foundation didn't just give me books, they gave me a future."</p>
+                        <p class="text-xs uppercase tracking-widest text-brand-earth mt-4">— Maria, Scholar Class of '23</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Momentum (Masonry Grid) -->
+    <section class="py-24 px-6 bg-brand-white">
+        <div class="max-w-[90rem] mx-auto mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div>
+                <h2 class="font-serif text-4xl text-brand-dark mb-4">Life at the Foundation</h2>
+                <p class="text-brand-dark/60 font-light max-w-md">Moments of connection, celebration, and hard work in Cagayan de Oro.</p>
+            </div>
+            <a href="#" class="text-brand-dark border-b border-brand-dark/20 pb-1 hover:border-brand-dark transition-colors text-sm font-medium">Follow us @limketkaifoundation</a>
+        </div>
+
+        <div class="max-w-[90rem] mx-auto columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            <!-- Grid Item 1 -->
+            <div class="break-inside-avoid relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full rounded-sm transition-transform duration-700 group-hover:scale-105" alt="Event">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white text-sm font-medium tracking-wide">Community Feeding Program</span>
+                </div>
+            </div>
+            <!-- Grid Item 2 (Tall) -->
+            <div class="break-inside-avoid relative group overflow-hidden">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" class="w-full rounded-sm transition-transform duration-700 group-hover:scale-105" alt="Dance">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white text-sm font-medium tracking-wide">DanceSport Competition</span>
+                </div>
+            </div>
+            <!-- Grid Item 3 -->
+            <div class="break-inside-avoid relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1601758177266-bc599de87707?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full rounded-sm transition-transform duration-700 group-hover:scale-105" alt="Volunteer">
+                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white text-sm font-medium tracking-wide">Volunteer Drive</span>
+                </div>
+            </div>
+            <!-- Grid Item 4 -->
+            <div class="break-inside-avoid relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full rounded-sm transition-transform duration-700 group-hover:scale-105" alt="School">
+            </div>
+             <!-- Grid Item 5 -->
+             <div class="break-inside-avoid relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="w-full rounded-sm transition-transform duration-700 group-hover:scale-105" alt="Dog">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Simple & Elegant -->
+    <footer class="bg-brand-dark text-brand-paper py-20 px-6 border-t border-white/10">
+        <div class="max-w-[90rem] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-5">
+                    <h3 class="font-serif text-3xl mb-6">Limketkai Foundation</h3>
+                    <p class="text-white/60 font-light max-w-sm mb-8">
+                        Rooted in Cagayan de Oro. Dedicated to the Filipino spirit of Bayanihan—uplifting lives through education, welfare, and technology.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition-all">
+                            <iconify-icon icon="solar:facebook-linear"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-brand-dark transition-all">
+                            <iconify-icon icon="solar:instagram-linear"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h4 class="text-xs uppercase tracking-widest text-brand-gold mb-6">Explore</h4>
+                    <ul class="space-y-4 text-sm text-white/70 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Our History</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Programs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Impact Reports</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">News &amp; Stories</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h4 class="text-xs uppercase tracking-widest text-brand-gold mb-6">Action</h4>
+                    <ul class="space-y-4 text-sm text-white/70 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Donate</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Volunteer</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner with Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Adopt a Pet</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-xs uppercase tracking-widest text-brand-gold mb-6">Newsletter</h4>
+                    <form class="flex border-b border-white/30 pb-2">
+                        <input type="email" placeholder="Your email address" class="bg-transparent border-none outline-none text-white w-full placeholder:text-white/40 text-sm font-light">
+                        <button type="button" class="text-brand-gold hover:text-white transition-colors uppercase text-xs font-semibold tracking-wider">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 font-light">
+                <p>© 2024 Limketkai Foundation, Inc. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>

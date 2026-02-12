@@ -1,0 +1,41 @@
+---
+/**
+ * Program Detail — Dynamic route from Sanity Program model
+ * Route: /programs/[slug] (arch.md §6)
+ * Rendering: Hybrid (arch.md §2)
+ *
+ * TODO Phase 5:
+ *   - Fetch program by slug from Sanity
+ *   - Implement getStaticPaths() with Sanity query
+ *   - Render fullDescription, impactBullets, gallery, CTA links
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+
+export async function getStaticPaths() {
+  // TODO: Replace with Sanity fetch
+  return [
+    { params: { slug: "dancesport-development" } },
+    { params: { slug: "scholarships" } },
+    { params: { slug: "dog-home" } },
+    { params: { slug: "cat-home" } },
+    { params: { slug: "tech-hub" } },
+    { params: { slug: "public-library" } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<BaseLayout title={`Program: ${slug}`}>
+  <SectionWrapper bg="paper">
+    <span class="section-label">Program Detail</span>
+    <h1 class="text-5xl md:text-6xl text-brand-dark mb-8 capitalize">
+      {slug?.replace(/-/g, " ")}
+    </h1>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl">
+      <!-- TODO Phase 5: Render Sanity fullDescription here -->
+      Program detail content placeholder.
+    </p>
+  </SectionWrapper>
+</BaseLayout>

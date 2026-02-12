@@ -1,0 +1,36 @@
+---
+/**
+ * Post Detail — Dynamic route for news/blog posts
+ * Route: /news/[slug] (arch.md §6)
+ * Rendering: Hybrid (arch.md §2)
+ *
+ * TODO Phase 6:
+ *   - Fetch post by slug from Sanity
+ *   - Implement getStaticPaths() with Sanity query
+ *   - Render portable text body
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+
+export async function getStaticPaths() {
+  // TODO: Replace with Sanity fetch
+  return [{ params: { slug: "placeholder" } }];
+}
+
+const { slug } = Astro.params;
+---
+
+<BaseLayout title={`News: ${slug}`}>
+  <SectionWrapper bg="paper">
+    <article class="max-w-3xl mx-auto">
+      <span class="section-label">News</span>
+      <h1 class="text-4xl md:text-5xl text-brand-dark mb-8 capitalize">
+        {slug?.replace(/-/g, " ")}
+      </h1>
+      <!-- TODO Phase 6: Render Sanity portable text body here -->
+      <div class="prose prose-lg text-brand-dark/70 font-light">
+        <p>Post body placeholder.</p>
+      </div>
+    </article>
+  </SectionWrapper>
+</BaseLayout>

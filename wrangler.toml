@@ -1,0 +1,12 @@
+# Cloudflare Pages configuration
+# See: https://developers.cloudflare.com/pages/configuration/wrangler-configuration/
+
+name = "lkkfoundation"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "./dist"
+
+# Environment variables are set in the Cloudflare dashboard
+# or via wrangler secret put <KEY>
+# [vars]
+# PUBLIC_SANITY_PROJECT_ID = ""
+# PUBLIC_SANITY_DATASET = "production"

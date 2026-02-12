@@ -1,0 +1,91 @@
+---
+/**
+ * Programs Listing — PRD: Programs (filter by pillar + status)
+ * Route: /programs (arch.md §6)
+ * Rendering: Hybrid — SSG + CMS (arch.md §2)
+ *
+ * TODO Phase 5:
+ *   - Fetch programs from Sanity
+ *   - Add Svelte island for pillar/status filter
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+import ProgramCard from "@components/shared/ProgramCard.astro";
+
+// Placeholder data — will be replaced by Sanity query
+const programs = [
+  {
+    title: "DanceSport Development",
+    summary: "Competitive dance training and scholarship program for youth.",
+    pillar: "Youth & Education",
+    status: "Active" as const,
+    slug: "dancesport-development",
+  },
+  {
+    title: "Scholarships",
+    summary: "Educational support for deserving students in Cagayan de Oro.",
+    pillar: "Youth & Education",
+    status: "Active" as const,
+    slug: "scholarships",
+  },
+  {
+    title: "Dog Home",
+    summary: "Rescue and rehabilitation for abandoned dogs.",
+    pillar: "Circle of Care",
+    status: "Active" as const,
+    slug: "dog-home",
+  },
+  {
+    title: "Cat Home",
+    summary: "Sanctuary for rescued cats.",
+    pillar: "Circle of Care",
+    status: "Active" as const,
+    slug: "cat-home",
+  },
+  {
+    title: "Community Technology & Learning Hub",
+    summary: "A planned tech hub to bridge the digital divide.",
+    pillar: "Accessible Futures",
+    status: "Planned" as const,
+    slug: "tech-hub",
+  },
+  {
+    title: "Public Library",
+    summary: "A planned community library for Cagayan de Oro.",
+    pillar: "Accessible Futures",
+    status: "Planned" as const,
+    slug: "public-library",
+  },
+];
+---
+
+<BaseLayout
+  title="Programs"
+  description="Explore the Limketkai Foundation's programs in youth education, animal welfare, and community technology."
+>
+  <SectionWrapper bg="paper">
+    <span class="section-label">What We Do</span>
+    <h1 class="text-5xl md:text-7xl text-brand-dark mb-6">Our Programs</h1>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl mb-16">
+      From youth empowerment to animal welfare to building accessible futures —
+      every program grows from the same roots.
+    </p>
+
+    <!-- TODO Phase 5: Add Svelte filter island here -->
+    <!-- <ProgramFilter client:load /> -->
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        programs.map((p) => (
+          <ProgramCard
+            title={p.title}
+            summary={p.summary}
+            pillar={p.pillar}
+            status={p.status}
+            slug={p.slug}
+          />
+        ))
+      }
+    </div>
+  </SectionWrapper>
+</BaseLayout>

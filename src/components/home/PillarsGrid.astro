@@ -1,0 +1,74 @@
+---
+/**
+ * PillarsGrid — Edge-to-edge 3-column pillar blocks from reference.html (lines 254-303)
+ * Pattern: full-bleed grid, image bg, gradient overlay, hover-reveal text
+ * Maps to PRD "3 Pillars Section" and arch.md Pillar model
+ *
+ * TODO Phase 5: Fetch pillar data from Sanity
+ */
+
+const pillars = [
+  {
+    title: "Empowering Youth",
+    description:
+      "Through movement, discipline, and education, we build the leaders of tomorrow.",
+    icon: "solar:users-group-two-rounded-linear",
+    image: "https://images.unsplash.com/photo-1535525153412-5a42439a210d?q=80&w=1000&auto=format&fit=crop",
+    imageAlt: "DanceSport",
+    cta: { label: "Explore Program", href: "/programs" },
+  },
+  {
+    title: "Circle of Compassion",
+    description:
+      "A safe haven for the abandoned. We advocate for a society that protects the vulnerable.",
+    icon: "solar:heart-linear",
+    image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg",
+    imageAlt: "Dog Shelter",
+    cta: { label: "Meet the Animals", href: "/programs" },
+  },
+  {
+    title: "Building Access",
+    description:
+      "Libraries and Tech Hubs that provide the tools for innovation and learning.",
+    icon: "solar:laptop-3-linear",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
+    imageAlt: "Students Computer",
+    cta: { label: "See Our Plans", href: "/programs" },
+  },
+];
+---
+
+<section class="grid md:grid-cols-3 min-h-[800px]">
+  {
+    pillars.map((pillar) => (
+      <div class="group relative h-[500px] md:h-auto overflow-hidden">
+        <img
+          src={pillar.image}
+          alt={pillar.imageAlt}
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/20 to-transparent opacity-90 transition-opacity" />
+        <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+          <iconify-icon icon={pillar.icon} class="text-brand-gold text-4xl mb-4 block" />
+          <h3 class="text-brand-paper font-serif text-3xl mb-2">
+            {pillar.title}
+          </h3>
+          <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500">
+            <div class="overflow-hidden">
+              <p class="text-white/80 font-light text-sm mb-6 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {pillar.description}
+              </p>
+            </div>
+          </div>
+          <a
+            href={pillar.cta.href}
+            class="inline-flex items-center gap-2 text-brand-gold text-xs uppercase tracking-widest hover:text-white transition-colors"
+          >
+            {pillar.cta.label} <iconify-icon icon="solar:arrow-right-linear" />
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</section>

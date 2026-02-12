@@ -1,0 +1,55 @@
+---
+/**
+ * LegacySection — Split heritage section from reference.html (lines 150-188)
+ * Pattern: 2-col grid, image with quote overlay + decorative corner,
+ * story text with eyebrow label and arrow link
+ */
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+---
+
+<SectionWrapper bg="paper">
+  <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+    <!-- Visual -->
+    <div class="relative order-2 lg:order-1">
+      <div class="aspect-[4/5] md:aspect-square relative overflow-hidden rounded-sm shadow-2xl">
+        <img
+          src="https://images.unsplash.com/photo-1515986049275-8fe15656a51e?q=80&w=1200&auto=format&fit=crop"
+          alt="Banaue Rice Terraces, Philippines — lush green mountains"
+          class="absolute inset-0 w-full h-full object-cover grayscale sepia-[30%] contrast-125"
+          loading="lazy"
+        />
+
+        <!-- Gradient for text legibility -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+        <!-- Quote overlay -->
+        <div class="absolute bottom-8 left-8 right-8">
+          <p class="font-serif italic text-2xl text-white leading-tight drop-shadow-lg">
+            "The strength of the tree lies in the depth of its roots."
+          </p>
+        </div>
+      </div>
+      <!-- Decorative corner element (reference pattern) -->
+      <div class="absolute -top-6 -left-6 w-24 h-24 border-t border-l border-brand-earth/30" aria-hidden="true"></div>
+    </div>
+
+    <!-- Story -->
+    <div class="order-1 lg:order-2">
+      <span class="section-label">Our Origins</span>
+      <h2 class="text-5xl md:text-6xl text-brand-dark mb-8">
+        Resilience woven into <br />
+        <span class="italic text-brand-earth/80">our history.</span>
+      </h2>
+      <p class="text-brand-dark/70 text-lg font-light leading-relaxed mb-8 max-w-lg">
+        <!-- PRD-aligned placeholder copy -->
+        Inspired by Lim Ket Kai's legacy of protection, generosity, and
+        livelihood-building, the foundation continues to nourish the land and
+        grow the sprouts.
+      </p>
+      <a href="/our-story" class="link-arrow">
+        Read the full story
+        <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</SectionWrapper>

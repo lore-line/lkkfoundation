@@ -1,0 +1,40 @@
+---
+/**
+ * Contact — PRD: Contact page
+ * Route: /contact (arch.md §6)
+ * Rendering: Static (arch.md §2)
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with the Limketkai Foundation in Cagayan de Oro, Philippines."
+>
+  <SectionWrapper bg="paper">
+    <span class="section-label">Reach Out</span>
+    <h1 class="text-5xl md:text-7xl text-brand-dark mb-8">
+      Contact <span class="italic text-brand-earth/80">Us</span>
+    </h1>
+
+    <div class="grid md:grid-cols-2 gap-16">
+      <div>
+        <p class="text-brand-dark/70 text-lg font-light leading-relaxed mb-8">
+          We'd love to hear from you. Reach out for inquiries about our
+          programs, partnerships, or volunteer opportunities.
+        </p>
+        <div class="space-y-4 text-brand-dark/70 font-light">
+          <p>Cagayan de Oro, Misamis Oriental, Philippines</p>
+          <!-- TODO: Add real contact details -->
+          <p>Email: info@limketkaifoundation.org</p>
+        </div>
+      </div>
+
+      <div>
+        <!-- TODO Phase 7: Build contact form -->
+        <p class="text-brand-dark/50 text-sm italic">Contact form placeholder — Phase 7</p>
+      </div>
+    </div>
+  </SectionWrapper>
+</BaseLayout>

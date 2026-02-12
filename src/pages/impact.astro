@@ -1,0 +1,52 @@
+---
+/**
+ * Impact — PRD: Metrics Dashboard + Stories + Events & Highlights
+ * Route: /impact (arch.md §6)
+ * Rendering: Hybrid (arch.md §2)
+ *
+ * TODO Phase 6: Fetch ImpactMetric, Story, Event from Sanity
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+import MetricCard from "@components/shared/MetricCard.astro";
+---
+
+<BaseLayout
+  title="Impact"
+  description="See the measurable impact of the Limketkai Foundation across education, welfare, and community programs."
+>
+  <!-- Metrics Dashboard -->
+  <SectionWrapper bg="paper">
+    <span class="section-label">Our Impact</span>
+    <h1 class="text-5xl md:text-7xl text-brand-dark mb-12">
+      Measuring what <span class="italic text-brand-earth/80">matters.</span>
+    </h1>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8">
+      <!-- TODO Phase 6: Replace with Sanity ImpactMetric data -->
+      <MetricCard value="—" label="Scholars Supported" />
+      <MetricCard value="—" label="Animals Rescued" />
+      <MetricCard value="—" label="Community Programs" />
+      <MetricCard value="—" label="Lives Touched" />
+    </div>
+  </SectionWrapper>
+
+  <!-- Stories -->
+  <SectionWrapper bg="white">
+    <span class="section-label">Stories</span>
+    <h2 class="text-4xl md:text-5xl text-brand-dark mb-12">
+      Voices from the community
+    </h2>
+    <!-- TODO Phase 6: Render Sanity Story entries -->
+    <p class="text-brand-dark/70 font-light">Story content placeholder.</p>
+  </SectionWrapper>
+
+  <!-- Events & Highlights -->
+  <SectionWrapper bg="paper">
+    <span class="section-label">Events</span>
+    <h2 class="text-4xl md:text-5xl text-brand-dark mb-12">
+      Events & Highlights
+    </h2>
+    <!-- TODO Phase 6: Render Sanity Event entries -->
+    <p class="text-brand-dark/70 font-light">Events listing placeholder.</p>
+  </SectionWrapper>
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+/**
+ * News Listing — PRD: Posts + Events
+ * Route: /news (arch.md §6)
+ * Rendering: Hybrid (arch.md §2)
+ *
+ * TODO Phase 6: Fetch Post entries from Sanity
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+import PostCard from "@components/shared/PostCard.astro";
+---
+
+<BaseLayout
+  title="News"
+  description="Latest news, stories, and events from the Limketkai Foundation."
+>
+  <SectionWrapper bg="paper">
+    <span class="section-label">Latest Updates</span>
+    <h1 class="text-5xl md:text-7xl text-brand-dark mb-6">News & Stories</h1>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl mb-16">
+      Updates from the foundation — events, stories, and announcements.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- TODO Phase 6: Replace with Sanity Post query -->
+      <PostCard
+        title="Post title placeholder"
+        excerpt="Excerpt placeholder for a news post."
+        slug="placeholder"
+        date="2024-01-01"
+      />
+    </div>
+  </SectionWrapper>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+/**
+ * MetricCard — Single impact metric display
+ * Matches the reference.html impact stats pattern (lines 315-331)
+ * Will be connected to Sanity ImpactMetric model.
+ */
+
+interface Props {
+  value: string;
+  label: string;
+}
+
+const { value, label } = Astro.props;
+---
+
+<div>
+  <p class="text-5xl md:text-6xl font-serif text-brand-earth mb-2">{value}</p>
+  <p class="text-sm uppercase tracking-widest text-brand-dark/60">{label}</p>
+</div>

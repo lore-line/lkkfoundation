@@ -1,0 +1,43 @@
+---
+/**
+ * PostCard — News/blog post card
+ * Will be connected to Sanity Post model.
+ */
+
+interface Props {
+  title: string;
+  excerpt: string;
+  slug?: string;
+  image?: string;
+  date?: string;
+}
+
+const {
+  title,
+  excerpt,
+  slug = "#",
+  image = "",
+  date = "",
+} = Astro.props;
+---
+
+<article class="group">
+  {image && (
+    <div class="aspect-video overflow-hidden rounded-sm mb-4">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        loading="lazy"
+      />
+    </div>
+  )}
+  {date && (
+    <time class="text-xs text-brand-dark/50 uppercase tracking-widest">{date}</time>
+  )}
+  <h3 class="text-xl mt-2 mb-2 group-hover:text-brand-earth transition-colors">{title}</h3>
+  <p class="text-brand-dark/70 font-light text-sm leading-relaxed mb-4">{excerpt}</p>
+  <a href={`/news/${slug}`} class="link-arrow">
+    Read more <span aria-hidden="true">&rarr;</span>
+  </a>
+</article>

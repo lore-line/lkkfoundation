@@ -1,0 +1,38 @@
+---
+/**
+ * SectionWrapper — Reusable section container
+ * Mirrors the reference.html pattern: py-24 md:py-32 + container-wide
+ * Supports dark/light bg variants.
+ */
+
+interface Props {
+  id?: string;
+  bg?: "paper" | "dark" | "white";
+  padding?: "default" | "none";
+  class?: string;
+}
+
+const {
+  id,
+  bg = "paper",
+  padding = "default",
+  class: className = "",
+} = Astro.props;
+
+const bgMap = {
+  paper: "bg-brand-paper",
+  dark: "bg-brand-dark text-brand-paper",
+  white: "bg-brand-white",
+};
+
+const paddingClass = padding === "default" ? "py-section-sm md:py-section" : "";
+---
+
+<section
+  id={id}
+  class:list={[bgMap[bg], paddingClass, "relative overflow-hidden", className]}
+>
+  <div class="container-wide">
+    <slot />
+  </div>
+</section>

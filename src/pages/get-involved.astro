@@ -1,0 +1,57 @@
+---
+/**
+ * Get Involved — PRD: Donate + Volunteer + Partner
+ * Route: /get-involved (arch.md §6)
+ * Rendering: Static (arch.md §2)
+ *
+ * TODO Phase 7: Wire up forms and donation integration
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+import Button from "@components/shared/Button.astro";
+---
+
+<BaseLayout
+  title="Get Involved"
+  description="Support the Limketkai Foundation — donate, volunteer, or partner with us."
+>
+  <!-- Donate -->
+  <SectionWrapper bg="paper" id="donate">
+    <span class="section-label">Give</span>
+    <h1 class="text-5xl md:text-7xl text-brand-dark mb-8">
+      Make a <span class="italic text-brand-gold">Difference</span>
+    </h1>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl mb-10">
+      Your donation directly supports education, animal welfare, and community
+      development in Cagayan de Oro.
+    </p>
+    <!-- TODO Phase 7: Embed or link to donation platform (one-time + recurring) -->
+    <Button href="#" variant="primary">Donate Now</Button>
+  </SectionWrapper>
+
+  <!-- Volunteer -->
+  <SectionWrapper bg="white" id="volunteer">
+    <span class="section-label">Join Us</span>
+    <h2 class="text-4xl md:text-5xl text-brand-dark mb-8">Volunteer</h2>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl mb-10">
+      Lend your time and skills to our programs on the ground.
+    </p>
+    <!-- TODO Phase 7: Build volunteer form (name, email, interest area) -->
+    <div class="max-w-md">
+      <p class="text-brand-dark/50 text-sm italic">Volunteer form placeholder — Phase 7</p>
+    </div>
+  </SectionWrapper>
+
+  <!-- Partner -->
+  <SectionWrapper bg="paper" id="partner">
+    <span class="section-label">Collaborate</span>
+    <h2 class="text-4xl md:text-5xl text-brand-dark mb-8">Partner with Us</h2>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl mb-10">
+      Corporate partners and institutional sponsors amplify our reach.
+    </p>
+    <!-- TODO Phase 7: Build partner inquiry form -->
+    <div class="max-w-md">
+      <p class="text-brand-dark/50 text-sm italic">Partner form placeholder — Phase 7</p>
+    </div>
+  </SectionWrapper>
+</BaseLayout>

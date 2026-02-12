@@ -1,0 +1,59 @@
+---
+/**
+ * ProgramCard — Used on Programs listing and home FeaturedPrograms
+ * Placeholder; will be connected to Sanity Program model.
+ */
+
+interface Props {
+  title: string;
+  summary: string;
+  pillar?: string;
+  status?: "Active" | "Upcoming" | "Planned";
+  slug?: string;
+  image?: string;
+}
+
+const {
+  title,
+  summary,
+  pillar = "",
+  status = "Active",
+  slug = "#",
+  image = "",
+} = Astro.props;
+
+const statusColor = {
+  Active: "bg-green-800/20 text-green-900",
+  Upcoming: "bg-brand-gold/20 text-brand-earth",
+  Planned: "bg-brand-clay/20 text-brand-earth",
+};
+---
+
+<article class="group bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+  {image && (
+    <div class="aspect-video overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        loading="lazy"
+      />
+    </div>
+  )}
+  <div class="p-6 md:p-8">
+    <div class="flex items-center gap-3 mb-4">
+      {pillar && (
+        <span class="section-label mb-0">{pillar}</span>
+      )}
+      <span class:list={["text-xs px-3 py-1 rounded-full font-medium", statusColor[status]]}>
+        {status}
+      </span>
+    </div>
+    <h3 class="text-xl mb-3">{title}</h3>
+    <p class="text-brand-dark/70 font-light text-sm leading-relaxed mb-6">{summary}</p>
+    <a href={`/programs/${slug}`} class="link-arrow">
+      Learn more
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</article>

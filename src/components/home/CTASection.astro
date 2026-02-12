@@ -1,0 +1,35 @@
+---
+/**
+ * CTASection — Donate / Volunteer call-to-action block
+ * Maps to PRD "CTA Block (Donate / Volunteer)"
+ * Visually inspired by the hero CTA pattern but as a standalone section
+ */
+import Button from "@components/shared/Button.astro";
+---
+
+<section class="bg-brand-dark text-brand-paper py-section-sm md:py-section relative overflow-hidden">
+  <!-- Subtle texture -->
+  <div
+    class="absolute inset-0 opacity-5"
+    style="background-image: radial-gradient(#C49A6C 1px, transparent 1px); background-size: 40px 40px;"
+    aria-hidden="true"
+  ></div>
+
+  <div class="container-wide relative z-10 text-center">
+    <h2 class="text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight">
+      Be part of the <span class="italic text-brand-gold">growth.</span>
+    </h2>
+    <p class="text-white/60 font-light max-w-xl mx-auto mb-12">
+      Whether through giving, volunteering, or partnering — your support
+      helps us nurture futures in Mindanao.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-5 justify-center">
+      <Button href="/get-involved#donate" variant="primary">
+        Make a Donation
+      </Button>
+      <Button href="/get-involved#volunteer" variant="outline">
+        Become a Volunteer
+      </Button>
+    </div>
+  </div>
+</section>

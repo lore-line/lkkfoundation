@@ -1,0 +1,55 @@
+---
+/**
+ * Our Story — PRD: Founder Legacy + Mission, Vision, Values
+ * Route: /our-story (arch.md §6)
+ * Rendering: Static (arch.md §2)
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import SectionWrapper from "@components/shared/SectionWrapper.astro";
+---
+
+<BaseLayout
+  title="Our Story"
+  description="The story of the Limketkai Foundation — from Lim Ket Kai's legacy of protection and generosity to today's mission in Cagayan de Oro."
+>
+  <!-- Founder Legacy -->
+  <SectionWrapper bg="paper">
+    <span class="section-label">Our Origins</span>
+    <h1 class="text-5xl md:text-7xl text-brand-dark mb-8">
+      The Limketkai <span class="italic text-brand-earth/80">Legacy</span>
+    </h1>
+    <p class="text-brand-dark/70 text-lg font-light leading-relaxed max-w-2xl">
+      <!-- TODO Phase 4: Replace with real founder story content -->
+      Placeholder for founder legacy narrative.
+    </p>
+  </SectionWrapper>
+
+  <!-- Mission, Vision, Values -->
+  <SectionWrapper bg="white">
+    <span class="section-label">Who We Are</span>
+    <h2 class="text-4xl md:text-5xl text-brand-dark mb-12">
+      Mission, Vision & Values
+    </h2>
+    <div class="grid md:grid-cols-3 gap-12">
+      <div>
+        <h3 class="text-xl mb-4 text-brand-earth">Mission</h3>
+        <p class="text-brand-dark/70 font-light leading-relaxed">
+          <!-- TODO: Real content from CMS or static copy -->
+          Placeholder mission statement.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-xl mb-4 text-brand-earth">Vision</h3>
+        <p class="text-brand-dark/70 font-light leading-relaxed">
+          Placeholder vision statement.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-xl mb-4 text-brand-earth">Values</h3>
+        <p class="text-brand-dark/70 font-light leading-relaxed">
+          Placeholder values.
+        </p>
+      </div>
+    </div>
+  </SectionWrapper>
+</BaseLayout>

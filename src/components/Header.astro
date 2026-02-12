@@ -1,0 +1,50 @@
+---
+/**
+ * Header — Transparent fixed nav from reference.html (lines 86-107)
+ * Pattern: logo left, menu trigger right — minimal, all breakpoints
+ * Reference shows NO inline nav links; only a Menu button that opens a panel.
+ */
+---
+
+<nav
+  class="fixed w-full z-40 top-0 transition-all duration-300 bg-gradient-to-b from-black/40 to-transparent pt-6 pb-12"
+  aria-label="Main navigation"
+>
+  <div class="container-wide flex items-center justify-between">
+    <!-- Logo (reference pattern: circle + text lockup) -->
+    <a href="/" class="flex items-center gap-3 group text-white">
+      <div
+        class="w-10 h-10 border border-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-brand-dark transition-all duration-500"
+      >
+        <span class="font-serif italic text-lg translate-y-[1px]">L</span>
+      </div>
+      <div class="flex flex-col text-white">
+        <span class="text-sm font-medium tracking-tight uppercase leading-none"
+          >Limketkai</span
+        >
+        <span
+          class="text-[0.6rem] tracking-[0.2em] uppercase opacity-80 leading-none mt-1"
+          >Foundation</span
+        >
+      </div>
+    </a>
+
+    <!-- Menu Trigger — visible on ALL breakpoints (matches reference exactly) -->
+    <button
+      class="flex items-center gap-3 text-white group"
+      aria-label="Open menu"
+    >
+      <span
+        class="hidden md:block text-xs font-medium tracking-widest uppercase opacity-90 group-hover:opacity-100 transition-opacity"
+        >Menu</span
+      >
+      <div
+        class="w-12 h-12 rounded-full border border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-gold group-hover:border-brand-gold group-hover:text-brand-dark transition-all duration-300"
+      >
+        <iconify-icon icon="solar:hamburger-menu-linear" width="20"></iconify-icon>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<!-- TODO Phase 3: Add full-screen menu overlay panel with nav links -->

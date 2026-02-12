@@ -1,0 +1,74 @@
+---
+/**
+ * FeaturedPrograms / Community Grid — Masonry photo grid from reference.html (lines 347-387)
+ * Pattern: CSS columns masonry, hover overlay with label, image scale on hover
+ * Maps to PRD "Featured Programs" and reference "Life at the Foundation"
+ *
+ * TODO Phase 5: Fetch featured images/programs from Sanity
+ */
+
+const gridItems = [
+  {
+    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop",
+    alt: "Event",
+    label: "Community Feeding Program",
+  },
+  {
+    image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg",
+    alt: "Dance",
+    label: "DanceSport Competition",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1601758177266-bc599de87707?q=80&w=800&auto=format&fit=crop",
+    alt: "Volunteer",
+    label: "Volunteer Drive",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=800&auto=format&fit=crop",
+    alt: "School",
+    label: "",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&w=800&auto=format&fit=crop",
+    alt: "Dog",
+    label: "",
+  },
+];
+---
+
+<section class="py-24 px-6 md:px-10 bg-brand-white">
+  <div class="max-w-container mx-auto mb-16 grid md:grid-cols-[1fr_auto] gap-6 items-end">
+    <div>
+      <h2 class="font-serif text-4xl text-brand-dark mb-4">Life at the Foundation</h2>
+      <p class="text-brand-dark/60 font-light max-w-md">
+        Moments of connection, celebration, and hard work in Cagayan de Oro.
+      </p>
+    </div>
+    <a href="#" class="text-brand-dark border-b border-brand-dark/20 pb-1 hover:border-brand-dark transition-colors text-sm font-medium">
+      Follow us @limketkaifoundation
+    </a>
+  </div>
+
+  <div class="max-w-container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] md:auto-rows-[220px] gap-4">
+    {
+      gridItems.map((item, i) => (
+        <div class:list={[
+          "relative group overflow-hidden rounded-sm",
+          i === 0 && "md:row-span-2",
+        ]}>
+          <img
+            src={item.image}
+            alt={item.alt}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          {item.label && (
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="text-white text-sm font-medium tracking-wide">{item.label}</span>
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</section>
